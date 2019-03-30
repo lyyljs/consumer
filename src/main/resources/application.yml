@@ -29,11 +29,11 @@ hystrix:
           enabled: false
         isolation:
           thread:
-            timeoutInMilliseconds: 56500
+            timeoutInMilliseconds: 1000
 
 feign:
   hystrix:
-    enabled: false
+    enabled: true
 
 spring-cloud-producer:
   ribbon:
@@ -44,6 +44,6 @@ spring-cloud-producer:
     MaxTotalHttpConnections: 500 # 最大总连接数
     MaxConnectionsPerHost: 100 # 单机连接最大数目
     # 重试相关
-    MaxAutoRetries: 1 # 对当前实例的重试次数
-    MaxAutoRetriesNextServer: 3 # 切换实例的重试次数
-    OkToRetryOnAllOperations: true # 对所有操作请求都进行重试    
+    MaxAutoRetries: 0 # 对当前实例的重试次数
+    MaxAutoRetriesNextServer: 0 # 切换实例的重试次数
+    OkToRetryOnAllOperations: false # 对所有操作请求都进行重试    
