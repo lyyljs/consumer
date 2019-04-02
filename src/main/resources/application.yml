@@ -47,3 +47,9 @@ spring-cloud-producer:
     MaxAutoRetries: 0 # 对当前实例的重试次数
     MaxAutoRetriesNextServer: 0 # 切换实例的重试次数
     OkToRetryOnAllOperations: false # 对所有操作请求都进行重试    
+    
+management:
+   endpoints:
+      web:
+         exposure:
+            include: hystrix.stream
